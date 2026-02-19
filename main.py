@@ -30,3 +30,9 @@ def pridat_ukol():
     popis = input("Zadej popis úkolu: ")
     ukol = {"nazev": nazev, "popis": popis}
     ukoly.append(ukol)
+    
+def zobrazit_ukoly():
+    i = 1
+    for ukol in ukoly:
+        print(str(i) + ". " + ukol["nazev"] + " - " + ukol["popis"])
+        i += 1
