@@ -30,7 +30,9 @@ def pridat_ukol():
     popis = input("Zadej popis úkolu: ")
     ukol = {"nazev": nazev, "popis": popis}
     ukoly.append(ukol)
-    
+    print(f"Úkol '{ukol['nazev']}' byl přidán.")
+    print("") 
+        
 def zobrazit_ukoly():
     i = 1
     for ukol in ukoly:
@@ -58,3 +60,5 @@ def odstranit_ukol():
             else:
                 odstranovany_ukol = ukoly.pop(cislo - 1)
                 print(f"Úkol '{odstranovany_ukol['nazev']}' byl odstraněn.")
+                
+hlavni_menu()
