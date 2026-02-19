@@ -24,3 +24,9 @@ def hlavni_menu():
     else:
         print ("Neplatná volba")
         hlavni_menu()
+        
+def pridat_ukol():
+    nazev = input("Zadej název úkolu: ")
+    popis = input("Zadej popis úkolu: ")
+    ukol = {"nazev": nazev, "popis": popis}
+    ukoly.append(ukol)
