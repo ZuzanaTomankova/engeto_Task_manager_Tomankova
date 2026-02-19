@@ -35,7 +35,13 @@ def pridat_ukol():
 
     ukol = {"nazev": nazev, "popis": popis}
     ukoly.append(ukol)
-    print(f"Úkol '{nazev}' byl přidán.\n") 
+    print(f"Úkol '{nazev}' byl přidán.\n")
+
+    dalsi = input("Chcete přidat další úkol? (a/n): ").lower()
+    if dalsi == "a":
+        pridat_ukol()
+    elif dalsi == "n":
+        return
         
 def zobrazit_ukoly():
     i = 1
