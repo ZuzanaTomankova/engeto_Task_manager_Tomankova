@@ -36,3 +36,25 @@ def zobrazit_ukoly():
     for ukol in ukoly:
         print(str(i) + ". " + ukol["nazev"] + " - " + ukol["popis"])
         i += 1
+        
+def odstranit_ukol():
+    zobrazit_ukoly()
+    if not ukoly:
+        print("Žádné úkoly k odstranění.")
+        hlavni_menu()
+    else:
+        cislo_vstup = input("Zadejte číslo úkolu, který chcete odstranit: ")
+
+        if not cislo_vstup.isdigit():
+            print("Neplatná volba - zadejte číslo.")
+            odstranit_ukol()
+        else:
+            cislo = int(cislo_vstup)
+            pocet_ukolu = len(ukoly)
+
+            if cislo < 1 or cislo > pocet_ukolu:
+                print("Neplatná volba - číslo mimo rozsah.")
+                odstranit_ukol() 
+            else:
+                odstranovany_ukol = ukoly.pop(cislo - 1)
+                print(f"Úkol '{odstranovany_ukol['nazev']}' byl odstraněn.")
