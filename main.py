@@ -26,12 +26,16 @@ def hlavni_menu():
         hlavni_menu()
         
 def pridat_ukol():
-    nazev = input("Zadej název úkolu: ")
-    popis = input("Zadej popis úkolu: ")
+    nazev = input("Zadej název úkolu: ").strip()
+    popis = input("Zadej popis úkolu: ").strip()
+
+    if not nazev or not popis:
+        print("Název ani popis nesmí být prázdný.\n")
+        return
+
     ukol = {"nazev": nazev, "popis": popis}
     ukoly.append(ukol)
-    print(f"Úkol '{ukol['nazev']}' byl přidán.")
-    print("") 
+    print(f"Úkol '{nazev}' byl přidán.\n") 
         
 def zobrazit_ukoly():
     i = 1
